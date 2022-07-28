@@ -7,6 +7,8 @@ import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { TransferComponent } from './transfer/transfer.component';
+import { CheckBookComponent } from './check-book/check-book.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,9 @@ import { TransferComponent } from './transfer/transfer.component';
     ProfileComponent,
     LoginComponent,
     HomeComponent,
-    TransferComponent
+    TransferComponent,
+    CheckBookComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

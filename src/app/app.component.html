@@ -1,1 +1,45 @@
-Hello
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6 text-center mb-5 mt-4">
+        <h2 class="heading-section"></h2>
+      </div>
+    </div>
+  </div>
+  <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light " id="ftco-navbar">
+    <div class="container d-flex align-items-center px-lg-5">
+      <a class="navbar-brand" href="/">ICIN ONLINE BANK</a>
+      <form action="#" class="searchform order-sm-start order-lg-last">
+        <div class="form-group d-flex">
+         <a routerLink="/login"><button type="button" placeholder="" class="btn btn-outline-success"><i class="fa fa-lock-open"></i> Login</button></a>
+         <a routerLink="/logout"> <button type="button" placeholder="" class="btn btn-outline-primary"><i class="fa fa-lock"></i> Logout</button></a>
+
+        </div>
+      </form>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="fa fa-bars"></span> Menu
+      </button>
+      <div class="collapse navbar-collapse" id="ftco-nav">
+        <ul class="navbar-nav m-auto">
+          <li class="nav-item active">
+            <a routerLink="/home" class="nav-link">Home</a>
+          </li>
+          <li class="nav-item"><a routerLink="/transactions" class="nav-link">Transactions</a></li>
+          <li class="nav-item"><a routerLink="/transfer" class="nav-link">Transfer</a></li>
+          <li class="nav-item"><a routerLink="/check-book" class="nav-link">Check Book Requests</a></li>
+          <li class="nav-item"><a routerLink="/profile" class="nav-link">Profile</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+
+<footer id="sticky-footer" class="footer flex-shrink-0 py-4 bg-dark text-white-50">
+  <div class="container text-center">
+    <small>Copyright &copy; ICIN Online Bank</small>
+  </div>
+</footer>
