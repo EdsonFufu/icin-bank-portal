@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-transfer',
@@ -7,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TransferComponent implements OnInit {
 
+  sourceAccount = localStorage.getItem("account")
+  transferFrom:FormGroup
   constructor() { }
 
   ngOnInit(): void {

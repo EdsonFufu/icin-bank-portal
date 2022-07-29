@@ -2,19 +2,22 @@
   <div class="mt-5 py-3 d-flex  card">
     <div class="text-lg-center"><h2>Account to Account Transfer</h2></div>
     <div class="card-body">
+      <form [formGroup] = "transferFrom" (submit)="onSubmit()" )>
       <div class="form-group mb-3">
-        <label for="exampleInputEmail1">AccountNumber</label>
-        <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Account Number" />
+        <label for="sorceAccount">AccountNumber</label>
+        <input type="text" class="form-control" id="sorceAccount" name="sourceAccount"  placeholder="Account Number" />
+        <input type="text" class="form-control" id="destinationAccount" name="destinationAccount"  placeholder="Account Number" />
       </div>
       <div class="form-group mb-3">
-        <label for="exampleInputPassword1">Amount</label>
-        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Amount" />
+        <label for="amount">Amount</label>
+        <input type="text" class="form-control" id="amount" name ="amount" placeholder="Amount" />
       </div>
       <div class="form-group mb-3">
-        <label for="exampleInputPassword2">Description</label>
-        <input type="text" class="form-control" id="exampleInputPassword2" placeholder="Description" />
+        <label for="desc">Description</label>
+        <input type="text" class="form-control" id="desc" name="description" placeholder="Description" />
       </div>
       <button type="submit" class="btn btn-outline-primary btn-lg w-25 float-lg-start">Transfer</button>
+      </form>
     </div>
   </div>
 </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {CheckBookRequestService} from "../services/check-book-request.service";
 
 @Component({
   selector: 'app-check-book',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CheckBookComponent implements OnInit {
 
-  constructor() { }
+  checkBookRequests:any
+  constructor(private checkBookReqService:CheckBookRequestService) { }
 
   ngOnInit(): void {
+    this.checkBookReqService.all().subscribe(data => {
+      this.checkBookRequests = data
+    })
   }
 
 }
