@@ -10,6 +10,9 @@ import { TransferComponent } from './transfer/transfer.component';
 import { CheckBookComponent } from './check-book/check-book.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TransactionComponent } from './transaction/transaction.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -20,11 +23,15 @@ import { TransactionComponent } from './transaction/transaction.component';
     TransferComponent,
     CheckBookComponent,
     DashboardComponent,
-    TransactionComponent
+    TransactionComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

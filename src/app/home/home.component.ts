@@ -6,10 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+   username: string | null;
+   roles: any;
 
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
+    this.username = sessionStorage.getItem("username");
+    this.roles = sessionStorage.getItem("roles");
   }
 
 }

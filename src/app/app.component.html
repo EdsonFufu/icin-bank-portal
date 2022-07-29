@@ -11,8 +11,8 @@
       <a class="navbar-brand" href="/">ICIN ONLINE BANK</a>
       <form action="#" class="searchform order-sm-start order-lg-last">
         <div class="form-group d-flex">
-         <a routerLink="/login"><button type="button" placeholder="" class="btn btn-outline-success"><i class="fa fa-lock-open"></i> Login</button></a>
-         <a routerLink="/logout"> <button type="button" placeholder="" class="btn btn-outline-primary"><i class="fa fa-lock"></i> Logout</button></a>
+         <span *ngIf="!isLoggedIn()"><a routerLink="/login"><button type="button"  class="btn btn-outline-success"><i class="fa fa-lock-open"></i> Login</button></a></span>
+         <span *ngIf="isLoggedIn()"><a routerLink="/logout"> <button (click) = "logout()" type="button"  class="btn btn-outline-primary"><i class="fa fa-lock"></i> Logout</button></a></span>
 
         </div>
       </form>
@@ -21,13 +21,13 @@
       </button>
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav m-auto">
-          <li class="nav-item active">
+          <li class="nav-item active float-start">
             <a routerLink="/home" class="nav-link">Home</a>
           </li>
-          <li class="nav-item"><a routerLink="/transaction" class="nav-link">Transactions</a></li>
-          <li class="nav-item"><a routerLink="/transfer" class="nav-link">Transfer</a></li>
-          <li class="nav-item"><a routerLink="/check-book" class="nav-link">Check Book Requests</a></li>
-          <li class="nav-item"><a routerLink="/profile" class="nav-link">Profile</a></li>
+          <li class="nav-item" *ngIf="isLoggedIn()"><a routerLink="/transaction" class="nav-link">Transactions</a></li>
+          <li class="nav-item" *ngIf="isLoggedIn()"><a routerLink="/transfer" class="nav-link">Transfer</a></li>
+          <li class="nav-item" *ngIf="isLoggedIn()"><a routerLink="/check-book" class="nav-link">Check Book Requests</a></li>
+          <li class="nav-item" *ngIf="isLoggedIn()"><a routerLink="/profile" class="nav-link">Profile</a></li>
         </ul>
       </div>
     </div>
