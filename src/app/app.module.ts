@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { TransferComponent } from './transfer/transfer.component';
 import { CheckBookComponent } from './check-book/check-book.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { TransactionComponent } from './transaction/transaction.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     HomeComponent,
     TransferComponent,
     CheckBookComponent,
-    DashboardComponent
+    DashboardComponent,
+    TransactionComponent
   ],
   imports: [
     BrowserModule,

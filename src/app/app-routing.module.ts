@@ -8,6 +8,7 @@ import {LoginComponent} from "./login/login.component";
 import {TransferComponent} from "./transfer/transfer.component";
 import {CheckBookComponent} from "./check-book/check-book.component";
 import {DashboardComponent} from "./dashboard/dashboard.component";
+import {TransactionComponent} from "./transaction/transaction.component";
 
 
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'transfer', component: TransferComponent },
   { path: 'check-book', component: CheckBookComponent },
+  { path: 'transaction', component: TransactionComponent },
   { path: '', redirectTo: '/home', pathMatch: 'full' },
 ];
 
