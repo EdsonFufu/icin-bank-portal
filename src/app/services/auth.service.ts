@@ -21,12 +21,12 @@ export class AuthService {
       .pipe(catchError(this.handleError),
         map(userData => {
           console.log(userData);
-          sessionStorage.setItem("username", username);
-          sessionStorage.setItem("account", userData.account.accountNumber);
-          let tokenStr = "Bearer " + userData.token;
+          localStorage.setItem("username", username);
+          localStorage.setItem("account", userData.account.accountNumber);
+          let tokenStr = "Bearer " + userData.jwt;
           console.log("Token---  " + tokenStr);
-          sessionStorage.setItem("token", tokenStr);
-          sessionStorage.setItem("roles", JSON.stringify(userData.roles));
+          localStorage.setItem("token", tokenStr);
+          localStorage.setItem("roles", JSON.stringify(userData.roles));
           return userData;
         })
       );

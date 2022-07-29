@@ -11,15 +11,15 @@ export class AppComponent {
   username: any;
   constructor(private router: Router) {}
   ngOnInit(): void {
-    this.username = sessionStorage.getItem("username");
+    this.username = localStorage.getItem("username");
   }
 
   logout(){
-    sessionStorage.clear()
+    localStorage.clear()
     this.router.navigate(['/login']).then(() => console.log("User Is Logout"));
   }
 
   isLoggedIn(): boolean{
-    return sessionStorage.getItem('username') !== null;
+    return localStorage.getItem('username') !== null;
   }
 }
