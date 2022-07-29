@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from "@angular/common/http";
+import {Message} from "../model/message.model";
 const headers = new HttpHeaders().set('Content-Type', 'application/json').set('Authorization',localStorage.getItem("token") + '');
 @Injectable({
   providedIn: 'root'
@@ -16,5 +17,8 @@ export class CheckBookRequestService {
   }
   one(id:number){
     return this.http.get(this.url + "/" + id,{headers});
+  }
+  request(){
+    return this.http.post<Message>(this.url, {} , {headers})
   }
 }

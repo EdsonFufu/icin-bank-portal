@@ -22,7 +22,7 @@ export class AuthService {
         map(userData => {
           console.log(userData);
           localStorage.setItem("username", username);
-          localStorage.setItem("account", userData.account.accountNumber);
+          localStorage.setItem("account", userData.account);
           let tokenStr = "Bearer " + userData.jwt;
           console.log("Token---  " + tokenStr);
           localStorage.setItem("token", tokenStr);

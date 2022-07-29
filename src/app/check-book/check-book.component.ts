@@ -8,12 +8,20 @@ import {CheckBookRequestService} from "../services/check-book-request.service";
 })
 export class CheckBookComponent implements OnInit {
 
+  message:string
+
   checkBookRequests:any
   constructor(private checkBookReqService:CheckBookRequestService) { }
 
   ngOnInit(): void {
     this.checkBookReqService.all().subscribe(data => {
       this.checkBookRequests = data
+    })
+
+  }
+  requestCheckBook(){
+    this.checkBookReqService.request().subscribe(response => {
+      this.message = response.message
     })
   }
 

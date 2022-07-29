@@ -2,19 +2,45 @@
   <div class="mt-5 py-3 d-flex  card">
     <div class="text-lg-center"><h2>Account to Account Transfer</h2></div>
     <div class="card-body">
-      <form [formGroup] = "transferFrom" (submit)="onSubmit()" )>
+      <div class="row">
+<!--      <div class="alert alert-primary d-flex align-items-center" role="alert">-->
+<!--        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Info:"><use xlink:href="#info-fill"/></svg>-->
+<!--        <div>-->
+<!--          An example alert with an icon-->
+<!--        </div>-->
+<!--      </div>-->
+      <div *ngIf="message" class="alert alert-success d-flex align-items-center" role="alert">
+        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+        <div>
+          {{message}}
+        </div>
+      </div>
+<!--      <div class="alert alert-warning d-flex align-items-center" role="alert">-->
+<!--        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Warning:"><use xlink:href="#exclamation-triangle-fill"/></svg>-->
+<!--        <div>-->
+<!--          An example warning alert with an icon-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div *ngIf="!message" class="alert alert-danger d-flex align-items-center" role="alert">-->
+<!--        <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>-->
+<!--        <div>-->
+<!--          {{message}}-->
+<!--        </div>-->
+<!--      </div>-->
+      </div>
+      <form [formGroup] = "transferForm" (ngSubmit)="onSubmit()">
       <div class="form-group mb-3">
-        <label for="sorceAccount">AccountNumber</label>
-        <input type="text" class="form-control" id="sorceAccount" name="sourceAccount"  placeholder="Account Number" />
-        <input type="text" class="form-control" id="destinationAccount" name="destinationAccount"  placeholder="Account Number" />
+        <label for="sourceAccount">AccountNumber</label>
+        <input type="hidden" class="form-control" id="sourceAccount" formControlName="sourceAccount"  placeholder="Account Number"  />
+        <input type="text" class="form-control" id="destinationAccount" formControlName="destinationAccount"  placeholder="Account Number" />
       </div>
       <div class="form-group mb-3">
         <label for="amount">Amount</label>
-        <input type="text" class="form-control" id="amount" name ="amount" placeholder="Amount" />
+        <input type="text" class="form-control" id="amount" formControlName ="amount" placeholder="Amount" />
       </div>
       <div class="form-group mb-3">
-        <label for="desc">Description</label>
-        <input type="text" class="form-control" id="desc" name="description" placeholder="Description" />
+        <label for="description">Description</label>
+        <input type="text" class="form-control" id="description" formControlName="description" placeholder="Description" />
       </div>
       <button type="submit" class="btn btn-outline-primary btn-lg w-25 float-lg-start">Transfer</button>
       </form>
