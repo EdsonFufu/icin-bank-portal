@@ -16,7 +16,7 @@ export class AppComponent {
 
   logout(){
     localStorage.clear()
-    this.router.navigate(['/login']).then(() => console.log("User Is Logout"));
+    this.router.navigate(['login']).then(() => console.log("User Is Logout"));
   }
 
   isLoggedIn(): boolean{

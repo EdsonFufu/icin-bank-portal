@@ -1,1 +1,90 @@
-<p>dashboard works!</p>
+<div class="content__boxed pt-4">
+  <div class="content__wrap">
+
+    <!-- Tiles -->
+    <div class="row">
+
+      <div class="col-sm-6 col-lg-6">
+
+        <!-- Stat widget -->
+        <div class="card bg-primary text-white mb-3 mb-xl-3">
+          <div class="card-body py-3 d-flex align-items-stretch">
+            <div class="d-flex align-items-center justify-content-center flex-shrink-0 rounded-start">
+              <i class="fa fa-money-check-dollar fs-1"></i>
+            </div>
+            <div class="flex-grow-1 ms-3">
+              <h5 class="h2 mb-0">{{profile.accounts[1].name}}</h5>
+              <p class="mb-0">{{profile.accounts[1].balance}}</p>
+            </div>
+          </div>
+        </div>
+        <!-- END : Stat widget -->
+
+      </div>
+      <div class="col-sm-6 col-lg-6">
+
+        <!-- Stat widget -->
+        <div class="card bg-success text-white mb-3 mb-xl-3">
+          <div class="card-body py-3 d-flex align-items-stretch">
+            <div class="d-flex align-items-center justify-content-center flex-shrink-0 rounded-start">
+              <i class="fa fa-money-check-dollar fs-1"></i>
+            </div>
+            <div class="flex-grow-1 ms-3">
+              <h5 class="h2 mb-0">{{profile.accounts[0].name}}</h5>
+              <p class="mb-0">{{profile.accounts[0].balance}}</p>
+            </div>
+          </div>
+        </div>
+        <!-- END : Stat widget -->
+
+      </div>
+
+    </div>
+    <!-- END : Tiles -->
+
+    <div class="row">
+      <div class="col-md-12 mb-3">
+
+        <!-- Top Users table -->
+        <div class="card">
+          <div class="card-body">
+
+            <h5 class="card-title">Transfer</h5>
+
+            <div class="table-responsive">
+              <table class="table table-striped">
+                <thead>
+                <tr>
+                  <th class="text-center">#</th>
+                  <th>destination</th>
+                  <th>Amount</th>
+                  <th class="text-center">Balance</th>
+                  <th class="text-center">TransactionDate</th>
+                  <th class="text-center">Status</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let transaction of transactions;let i = index" [attr.data-index] = "i">
+                  <td>{{i + 1}}</td>
+                  <td class="text-center">{{transaction.destAccount}}</td>
+                  <td><span>{{transaction.amount}}</span></td>
+                  <td><span>{{transaction.balance}}</span></td>
+                  <td><span class="text-muted">{{transaction.createdDate}}</span></td>
+                  <td>
+                    <span class="d-block badge bg-success" *ngIf="transaction.status">success</span>
+                    <span class="d-block badge bg-danger" *ngIf="!transaction.status">failed</span>
+                  </td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+        </div>
+        <!-- END : Top Users table -->
+
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
       data => {
         console.log(data);
         this.isLoggedin = true
-        this.router.navigate(['/home']);
+        this.router.navigate(['dashboard']);
       },
       error=>{
         console.log(error);
